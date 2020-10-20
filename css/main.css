@@ -12,7 +12,7 @@ html, body {
   box-sizing: border-box;
   background-color: #111;
   border-radius: 10px;
-  box-shadow: 0 0 10px 2px #777;
+  box-shadow: 0 0 7px 1px #777;
   vertical-align: middle;
   padding: 0.5em;
 }
@@ -27,7 +27,7 @@ html, body {
   text-align: right;
 }
 
-.menu-button {
+.btn {
   background-color: #111;
   color: #fff;
   border: none;
@@ -37,19 +37,87 @@ html, body {
   font-size: 1em;
   vertical-align: middle;
   transition: all 0.4s;
+  cursor: pointer;
 }
 
-.tool-button {
+.tool-btn {
   width: 100%;
+  margin: 0.2em 0;
 }
 
-.menu-button:hover {
+.brush.active-brush {
+  background-color: #444;
+}
+
+.btn.disabled {
+  cursor: default;
+  color: #888;
+}
+
+.btn.disabled:hover {
+  background-color: #111;
+}
+
+.btn:hover {
   background-color: #333;
 }
 
 .toolbar {
   position: fixed;
-  width: 10%;
+  width: 10em;
   top: 4em;
   bottom: 0.5em;
+}
+
+.drawing-container {
+  font-size: 1em;
+  position: fixed;
+  top: 4em;
+  bottom: 0.5em;
+  left: 11em;
+  right: 0.5em;
+  box-shadow: 0 0 7px 1px #777;
+  border-radius: 10px;
+  padding: 0.5em;
+}
+
+.canvas-container {
+  display: none;
+  height: 100%;
+  width: 100%;
+  overflow: scroll;
+}
+
+.popup {
+  position: fixed;
+  top: -4.5em;
+  opacity: 0;
+  right: 1em;
+  text-align: center;
+  padding: 1em;
+  z-index: 9999;
+  transition: opacity 0.1s ease-in, top 0.1s ease-in;
+}
+
+.popup-inpt {
+  background-color: #eee;
+  color: #111;
+  border: none;
+  border-radius: 5px;
+  padding: 0.5em 1.5em;
+  font-size: 1em;
+  vertical-align: middle;
+  transition: all 0.4s;
+  margin: 0 0.5em;
+}
+
+div.temp_rect_box {
+  border: 1px solid #000;
+  position: fixed;
+  display: none;
+  z-index: 9999;
+}
+
+canvas {
+  border: 2px dashed #adf;
 }
